@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <canvas id="myChart" width="800" height="300"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('myChart')
+
+    new Chart(ctx, {
+        type: 'bar',
+        data:
+        {
+          labels : [{% for item in labels %} "{{ item }}", {% endfor %}],
+          datasets:
+          [
+            {
+              label: "Average temperature  by month (C)",
+              data : [{% for item in values %} {{ item }}, {% endfor %}],
+              backgroundColor: [{% for item in bar_backgroundcolor %} "{{ item }}", {% endfor %}],
+              borderColor: [{% for item in bar_bordercolor %} "{{ item }}", {% endfor %}],
+              borderWidth: 1
+            }
+          ]
+        },
+        options:
+        {
+          indexAxis: '{{q_axis}}',
+          plugins:
+          {
+            legend:
+            {
+              position: 'bottom',
+            },
+            title:
+            {
+              display: true,
+              text: 'Avarage temperature by year "{{q_year}}" and city "{{q_city}}"'
+            }
+          }
+        }
+    });
+  </script>
+
+{% endblock %}

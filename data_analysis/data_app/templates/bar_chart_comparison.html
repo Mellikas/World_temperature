@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <canvas id="myChart" width="800" height="300"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('myChart')
+
+    new Chart(ctx, {
+        type: 'bar',
+        data:
+        {
+          labels : [{% for item in labels %} "{{ item }}", {% endfor %}],
+          datasets:
+          [
+            {
+              label: "{{q_year_1}} | {{q_city_1}}",
+              data : [{% for item in values_1 %} {{ item }}, {% endfor %}],
+              backgroundColor: [{% for item in bar_backgroundcolor %} "{{ item }}", {% endfor %}],
+              borderColor: [{% for item in bar_bordercolor %} "{{ item }}", {% endfor %}],
+              borderWidth: 1
+            },
+            {
+              label: "{{q_year_2}} | {{q_city_2}}",
+              data : [{% for item in values_2 %} {{ item }}, {% endfor %}],
+              backgroundColor: [{% for item in bar_backgroundcolor %} "{{ item }}", {% endfor %}],
+              borderColor: [{% for item in bar_bordercolor %} "{{ item }}", {% endfor %}],
+              borderWidth: 1
+            },
+            {
+              label: "{{q_year_3}} | {{q_city_3}}",
+              data : [{% for item in values_3 %} {{ item }}, {% endfor %}],
+              backgroundColor: [{% for item in bar_backgroundcolor %} "{{ item }}", {% endfor %}],
+              borderColor: [{% for item in bar_bordercolor %} "{{ item }}", {% endfor %}],
+              borderWidth: 1
+            }
+          ]
+        },
+        options:
+        {
+          indexAxis: '{{q_axis}}',
+          plugins:
+          {
+            legend:
+            {
+              position: 'bottom',
+            },
+            title:
+            {
+              display: true,
+              text: 'Avarage temperature comparison'
+            }
+          }
+        }
+    });
+  </script>
+
+{% endblock %}

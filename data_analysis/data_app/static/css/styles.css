@@ -1,0 +1,44 @@
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.center2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.input{
+ padding: 3px;
+ border-radius: 10px;
+ margin: 10px auto;
+ border: 1px solid #918383;
+ color: #757474;
+ outline: none;
+ font-size: 13px;
+}
+
+.input2{
+ padding: 2px;
+ border-radius: 10px;
+ margin: 1px auto;
+ border: 1px solid #918383;
+ color: #757474;
+ outline: none;
+ font-size: 13px;
+}
