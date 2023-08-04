@@ -12,7 +12,7 @@ Project was created to familiarize with:
 
 **HOW TO INSTAL AND RUN**
 
-1.Create a new Django project in your IDE (e.g. PyCharm)
+1. Create a new Django project in your IDE (e.g. PyCharm)
 2. Download zipped project
 3. Upload the unzipped files to the newly created project
 4. In terminal run: `pip install -r requirements.txt`
