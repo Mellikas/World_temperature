@@ -24,10 +24,9 @@ def home(request):
     return render(request, template_name='home.html', context=context)
 
 
-def bar_chart(request):
+def line_chart(request):
     q_year = request.GET.get('query_year')
     q_city = request.GET.get('query_city')
-    q_axis = request.GET.get('query_axis')
     labels = months
     values = []
 
@@ -46,16 +45,13 @@ def bar_chart(request):
     context = {
         'q_year': q_year,
         'q_city': q_city,
-        'q_axis': q_axis,
         "labels": labels,
         "values": values,
-        "bar_backgroundcolor": bar_backgroundcolor,
-        "bar_bordercolor": bar_bordercolor
     }
-    return render(request, template_name='bar_chart.html', context=context)
+    return render(request, template_name='line_chart.html', context=context)
 
 
-def bar_chart_comparison(request):
+def bar_chart(request):
     q_year_1 = request.GET.get('query_year_1')
     q_city_1 = request.GET.get('query_city_1')
     q_year_2 = request.GET.get('query_year_2')
@@ -122,7 +118,7 @@ def bar_chart_comparison(request):
         "bar_backgroundcolor": bar_backgroundcolor,
         "bar_bordercolor": bar_bordercolor
     }
-    return render(request, template_name='bar_chart_comparison.html', context=context)
+    return render(request, template_name='bar_chart.html', context=context)
 
 
 def polar_area(request):

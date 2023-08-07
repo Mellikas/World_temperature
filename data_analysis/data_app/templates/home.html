@@ -38,7 +38,6 @@ new Chart(ctx, {
       {
         legend:
         {
-          position: 'bottom',
           display: false,
         },
         title:
@@ -58,9 +57,9 @@ new Chart(ctx, {
 <div class="row">
 
     <div class="column">
-        <form id=bar_chart action="{% url 'bar_chart' %}" method="get">
+        <form id=line_chart action="{% url 'line_chart' %}" method="get">
             <img src="{% static '/media/img/bar_chart.png' %}" width="50" height="30" >
-            <label for="bar_chart" style="font-family:verdana;color:gray;"><u>Bar chart</u></label>
+            <label for="line_chart" style="font-family:verdana;color:gray;"><u>Line chart</u></label>
             <br>
                 <select name="query_city" class="input2" required>
                     <option value="">Choose city</option>
@@ -75,19 +74,13 @@ new Chart(ctx, {
                     {% endfor %}
                 </select>
             <br>
-                <select name="query_axis" class="input2" required>
-                    <option value="">Choose chart index axis</option>
-                    <option value=x >X</option>
-                    <option value=y >Y</option>
-                </select>
-            <br>
                 <input type="submit" value="Generate chart" class="input"/>
         </form>
     </div>
     <div class="column">
-        <form id=bar_chart_comparison action="{% url 'bar_chart_comparison' %}" method="get">
+        <form id=bar_chart action="{% url 'bar_chart' %}" method="get">
             <img src="{% static '/media/img/bar_chart.png' %}" width="50" height="30" >
-            <label for="bar_chart_comparison" style="text-align:center;font-family:verdana;color:gray;"><u>Bar chart comparison</u></label>
+            <label for="bar_chart" style="text-align:center;font-family:verdana;color:gray;"><u>Bar chart</u></label>
             <br>
                 <select name="query_city_1" class="input2" required>
                     <option value="">Choose city (1)</option>
