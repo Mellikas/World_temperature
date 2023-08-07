@@ -1,4 +1,4 @@
-# World temperature
+**WORLD TEMPERATURE**
 
 Website project created during the CodeAcademy course.
 
@@ -10,7 +10,7 @@ Project was created to familiarize with:
 - HTML templates
 - SQLite
 
-#HOW TO INSTALL AND RUN
+**HOW TO INSTALL AND RUN**
 
 1. Create a new Django project in your IDE (e.g. PyCharm)
 2. Download zipped project
