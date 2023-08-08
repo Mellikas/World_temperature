@@ -5,7 +5,6 @@
 <div class="center2" >
   <canvas id="myChart" ></canvas>
 </div>
-
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     const ctx = document.getElementById('myChart')
@@ -20,43 +19,14 @@
             {
               label: "Average temperature  by month (C)",
               data : [{% for item in values %} {{ item }}, {% endfor %}],
-              backgroundColor:
-              [
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(255, 205, 86, 0.2)',
-                'rgba(255, 205, 86, 0.2)',
-                'rgba(255, 205, 86, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-              ],
-              borderColor:
-              [
-                'rgb(54, 162, 235)',
-                'rgb(54, 162, 235)',
-                'rgb(75, 192, 192)',
-                'rgb(75, 192, 192)',
-                'rgb(75, 192, 192)',
-                'rgb(255, 205, 86)',
-                'rgb(255, 205, 86)',
-                'rgb(255, 205, 86)',
-                'rgb(255, 159, 64)',
-                'rgb(255, 159, 64)',
-                'rgb(255, 159, 64)',
-                'rgb(54, 162, 235)'
-              ],
+              backgroundColor: [{% for item in backgroundcolor %} "{{ item }}", {% endfor %}],
+              borderColor: [{% for item in bordercolor %} "{{ item }}", {% endfor %}],
               borderWidth: 1
             }
           ]
         },
         options:
         {
-          indexAxis: '{{q_axis}}',
           plugins:
           {
             legend:
@@ -66,7 +36,7 @@
             title:
             {
               display: true,
-              text: 'Avarage temperature by year "{{q_year}}" and city "{{q_city}}"'
+              text: '{{q_year}} avarage temperature in {{q_city}}'
             }
           }
         }

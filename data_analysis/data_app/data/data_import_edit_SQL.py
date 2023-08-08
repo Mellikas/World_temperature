@@ -6,8 +6,6 @@ Leave all program lines active until data will be transfared end edited in datab
 """
 
 
-"""DATA IMPORT/EDITING IN DATABASE"""
-
 """Creating a connection to the database"""
 # conn = sqlite3.connect('db.sqlite3')
 

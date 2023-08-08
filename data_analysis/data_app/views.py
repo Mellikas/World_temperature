@@ -1,7 +1,7 @@
 from django.db.models import Q, Avg
 from django.shortcuts import render
 from .models import Temperature
-from .data.data_chart_parameters import months, years, bar_backgroundcolor, bar_bordercolor
+from .data.data_chart_parameters import months, years, backgroundcolor, bordercolor
 
 city = Temperature.objects.values_list("city", "country").distinct()
 
@@ -47,6 +47,8 @@ def line_chart(request):
         'q_city': q_city,
         "labels": labels,
         "values": values,
+        "backgroundcolor": backgroundcolor,
+        "bordercolor": bordercolor
     }
     return render(request, template_name='line_chart.html', context=context)
 
@@ -115,8 +117,8 @@ def bar_chart(request):
         "values_1": values_1,
         "values_2": values_2,
         "values_3": values_3,
-        "bar_backgroundcolor": bar_backgroundcolor,
-        "bar_bordercolor": bar_bordercolor
+        "backgroundcolor": backgroundcolor,
+        "bordercolor": bordercolor
     }
     return render(request, template_name='bar_chart.html', context=context)
 
@@ -144,5 +146,7 @@ def polar_area(request):
         'q_city': q_city,
         "labels": labels,
         "values": values,
+        "backgroundcolor": backgroundcolor,
+        "bordercolor": bordercolor
     }
     return render(request, template_name='polar_area.html', context=context)

@@ -17,22 +17,22 @@
             {
               label: "{{q_year_1}} | {{q_city_1}}",
               data : [{% for item in values_1 %} {{ item }}, {% endfor %}],
-              backgroundColor: [{% for item in bar_backgroundcolor %} "{{ item }}", {% endfor %}],
-              borderColor: [{% for item in bar_bordercolor %} "{{ item }}", {% endfor %}],
+              backgroundColor: [{% for item in backgroundcolor %} "{{ item }}", {% endfor %}],
+              borderColor: [{% for item in bordercolor %} "{{ item }}", {% endfor %}],
               borderWidth: 1
             },
             {
               label: "{{q_year_2}} | {{q_city_2}}",
               data : [{% for item in values_2 %} {{ item }}, {% endfor %}],
-              backgroundColor: [{% for item in bar_backgroundcolor %} "{{ item }}", {% endfor %}],
-              borderColor: [{% for item in bar_bordercolor %} "{{ item }}", {% endfor %}],
+              backgroundColor: [{% for item in backgroundcolor %} "{{ item }}", {% endfor %}],
+              borderColor: [{% for item in bordercolor %} "{{ item }}", {% endfor %}],
               borderWidth: 1
             },
             {
               label: "{{q_year_3}} | {{q_city_3}}",
               data : [{% for item in values_3 %} {{ item }}, {% endfor %}],
-              backgroundColor: [{% for item in bar_backgroundcolor %} "{{ item }}", {% endfor %}],
-              borderColor: [{% for item in bar_bordercolor %} "{{ item }}", {% endfor %}],
+              backgroundColor: [{% for item in backgroundcolor %} "{{ item }}", {% endfor %}],
+              borderColor: [{% for item in bordercolor %} "{{ item }}", {% endfor %}],
               borderWidth: 1
             }
           ]

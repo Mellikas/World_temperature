@@ -1,6 +1,6 @@
 **WORLD TEMPERATURE**
 
-Website project created during the CodeAcademy course.
+Website/Data analysis project created during the CodeAcademy course.
 
 **DESCRIPTION**
 
@@ -26,6 +26,6 @@ Project was created to familiarize with:
    4. follow steps in **data_import_edit_SQL.py** and run it (dir: data_analysis/data_app/data/data_import_edit_SQL.py)
 9. In terminal run: `python manage.py runserver localhost:18080` (or similar `localhost: 18000` etc.)
 10. Push on active server link in terminal.
-11. Go to and check it: 
+11. Go to: 
     - http://localhost:18080
     - http://localhost:18080/admin

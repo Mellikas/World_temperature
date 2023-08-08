@@ -2,59 +2,44 @@
 
 {% block content %}
 
-
 <canvas id="myChart" width="300" height="90"></canvas>
-
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script>
-const ctx = document.getElementById('myChart')
+    const ctx = document.getElementById('myChart')
 
-new Chart(ctx, {
-    type: 'line',
-    data:
-    {
-      labels : [{% for item in labels %} "{{ item }}", {% endfor %}],
-      datasets:
-      [
+    new Chart(ctx, {
+        type: 'line',
+        data:
         {
-          label: "T",
-          data : [{% for item in values %} {{ item }}, {% endfor %}],
-          backgroundColor:
+          labels : [{% for item in labels %} "{{ item }}", {% endfor %}],
+          datasets:
           [
-            'rgba(54, 162, 235, 0.2)',
-          ],
-          borderColor:
-          [
-            'rgb(54, 162, 235)',
-            'rgb(75, 192, 192)',
-            'rgb(255, 205, 86)',
-            'rgb(255, 159, 64)',
-          ],
-          borderWidth: 2
-        }
-      ]
-    },
-    options:
-    {
-      plugins:
-      {
-        legend:
-        {
-          position: 'bottom',
-          display: true,
+            {
+              label: "T",
+              data : [{% for item in values %} {{ item }}, {% endfor %}],
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderColor: [{% for item in bordercolor %} "{{ item }}", {% endfor %}],
+              borderWidth: 3,
+            }
+          ]
         },
-        title:
+        options:
         {
-          display: true,
-          text: 'Avarage temperature {{q_year}} {{q_city}}'
+          plugins:
+          {
+            legend:
+            {
+              position: 'bottom',
+              display: true,
+            },
+            title:
+            {
+              display: true,
+              text: '{{q_year}} avarage temperature in {{q_city}}'
+            }
+          }
         }
-      }
-    }
-});
-
+    });
 </script>
-
 
 {% endblock %}

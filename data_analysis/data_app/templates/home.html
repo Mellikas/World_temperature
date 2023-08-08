@@ -5,49 +5,49 @@
 <canvas id="myChart" width="300" height="70"></canvas>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-const ctx = document.getElementById('myChart')
+    const ctx = document.getElementById('myChart')
 
-new Chart(ctx, {
-    type: 'line',
-    data:
-    {
-      labels : [{% for item in labels %} "{{ item }}", {% endfor %}],
-      datasets:
-      [
+    new Chart(ctx, {
+        type: 'line',
+        data:
         {
-          label: "T",
-          data : [{% for item in values %} {{ item }}, {% endfor %}],
-          backgroundColor:
+          labels : [{% for item in labels %} "{{ item }}", {% endfor %}],
+          datasets:
           [
-            'rgba(54, 162, 235, 0.2)',
-          ],
-          borderColor:
-          [
-            'rgb(54, 162, 235)',
-            'rgb(75, 192, 192)',
-            'rgb(255, 205, 86)',
-            'rgb(255, 159, 64)',
-          ],
-          borderWidth: 2
-        }
-      ]
-    },
-    options:
-    {
-      plugins:
-      {
-        legend:
-        {
-          display: false,
+            {
+              label: "T",
+              data : [{% for item in values %} {{ item }}, {% endfor %}],
+              backgroundColor:
+              [
+                'rgba(54, 162, 235, 0.2)',
+              ],
+              borderColor:
+              [
+                'rgb(54, 162, 235)',
+                'rgb(75, 192, 192)',
+                'rgb(255, 205, 86)',
+                'rgb(255, 159, 64)',
+              ],
+              borderWidth: 2
+            }
+          ]
         },
-        title:
+        options:
         {
-          display: true,
-          text: 'World avarage temperature change 1995 - 2019'
+          plugins:
+          {
+            legend:
+            {
+              display: false,
+            },
+            title:
+            {
+              display: true,
+              text: 'World avarage temperature change 1995 - 2019'
+            }
+          }
         }
-      }
-    }
-});
+    });
 </script>
 
 {% load static %}
@@ -55,10 +55,9 @@ new Chart(ctx, {
 <h1 style="text-align:center;font-size:120%;font-family:verdana;color:gray;">Choose your chart and insert required input</h1>
 
 <div class="row">
-
     <div class="column">
         <form id=line_chart action="{% url 'line_chart' %}" method="get">
-            <img src="{% static '/media/img/bar_chart.png' %}" width="50" height="30" >
+            <img src="{% static '/media/img/line_chart.png' %}" width="50" height="30" >
             <label for="line_chart" style="font-family:verdana;color:gray;"><u>Line chart</u></label>
             <br>
                 <select name="query_city" class="input2" required>

@@ -5,7 +5,7 @@ months = [
 ]
 years = list(range(1995, 2020))
 
-bar_backgroundcolor = [
+backgroundcolor = [
     'rgba(54, 162, 235, 0.2)',
     'rgba(54, 162, 235, 0.2)',
     'rgba(75, 192, 192, 0.2)',
@@ -20,7 +20,7 @@ bar_backgroundcolor = [
     'rgba(54, 162, 235, 0.2)',
 ]
 
-bar_bordercolor = [
+bordercolor = [
     'rgb(54, 162, 235)',
     'rgb(54, 162, 235)',
     'rgb(75, 192, 192)',

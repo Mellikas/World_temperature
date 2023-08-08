@@ -9,7 +9,7 @@ Leave all program lines active until a new CSV file is created (exception: check
 
 
 """DATA OPENING & FORMING DATAFRAME"""
-df = pd.read_csv('temp_data.csv', low_memory=False)
+# df = pd.read_csv('temp_data.csv', low_memory=False)
 
 """CHECK: all data"""
 # shape = df.shape
@@ -32,14 +32,14 @@ df = pd.read_csv('temp_data.csv', low_memory=False)
 # print(f'[(DF) States values check]: \n {states} \n ----------------------------------')
 
 """DROP: at this project unreasonable to leave 'State' data"""
-df.drop('State', axis=1, inplace=True)
+# df.drop('State', axis=1, inplace=True)
 
 """CHECK: year data"""
 # print(df['Year'].value_counts())
 
 """DROP: unreasonable to leave not full (2020) and invalid (200;201;) year data"""
-df.drop(df[df['Year'] < 1995].index, inplace=True)
-df.drop(df[df['Year'] > 2019].index, inplace=True)
+# df.drop(df[df['Year'] < 1995].index, inplace=True)
+# df.drop(df[df['Year'] > 2019].index, inplace=True)
 
 """CHECK: avg temperature data"""
 # print(df['AvgTemperature'].describe())
@@ -47,7 +47,7 @@ df.drop(df[df['Year'] > 2019].index, inplace=True)
 # plt.show()
 
 """DROP: unreasonable temperature data (<-40)"""
-df.drop(df[(df['AvgTemperature'] < -40)].index, inplace=True)
+# df.drop(df[(df['AvgTemperature'] < -40)].index, inplace=True)
 
 """RECHECK: avg temperature data"""
 # print(df['AvgTemperature'].describe())
@@ -56,7 +56,7 @@ df.drop(df[(df['AvgTemperature'] < -40)].index, inplace=True)
 # plt.show()
 
 """FORMING NEW DATAFRAME: df2 grouped by ('Region', 'Country', 'City', 'Year', 'Month') on AvgTemperature mean"""
-df2 = df.groupby(['Region', 'Country', 'City', 'Year', 'Month'])['AvgTemperature'].mean().reset_index()
+# df2 = df.groupby(['Region', 'Country', 'City', 'Year', 'Month'])['AvgTemperature'].mean().reset_index()
 
 """CHECK: df2 data"""
 # shape = df2.shape
